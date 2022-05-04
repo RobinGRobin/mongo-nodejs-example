@@ -1,6 +1,10 @@
 const express = require('express');
 const artSchema = require('../models/news_model');
 const router = express.Router();
+const rController = require("../controllers/routesController");
+
+// initial page
+router.get("/", rController.getInitialPage);
 
 // create new article
 router.post('/article', (req, res) => {
@@ -16,7 +20,7 @@ router.post('/article', (req, res) => {
 });
 
 // list articles
-router.get('/article', (req, res) => {
+router.get('/articles', (req, res) => {
     artSchema.find()
                 .then((data) => res.json(data))
                 .catch((error) => res.json(error));

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">Daily dose of science</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    
+    <!-- Mostrar las noticias -->
+    <div class="container">
+        <!-- Section header -->
+        <div class="bs-docs-section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h1 id="news-section">5G NETWORK</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <% for(var i=0; i < noticia.length; i++){ %>
+                <div class="col-lg-4">
+                    <% if(((2*i)+i+1) < noticia.length){ %>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"> <%= noticia[(2*i)+i+1].title %>  </h4>
+                                <h6 class="card-subtitle mb-2 text-muted">Por: <%= noticia[(2*i)+i+1].author %> </h6>
+                                <h6 class="card-subtitle mb-2 text-muted"> <%= noticia[(2*i)+i+1].date %> </h6>
+                                <img class="img-fluid" src=<%=noticia[(2*i)+i+1].mediaSource %> > 
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                    <% } %>
+                </div>
+                <div class="col-lg-4">
+                    <% if(((2*i)+i+2) < noticia.length){ %>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"> <%= noticia[(2*i)+i+2].title %>  </h4>
+                                <h6 class="card-subtitle mb-2 text-muted">Por: <%= noticia[(2*i)+i+2].author %> </h6>
+                                <h6 class="card-subtitle mb-2 text-muted"> <%= noticia[(2*i)+i+2].date %> </h6>
+                                <img class="img-fluid" src=<%=noticia[(2*i)+i+2].mediaSource %> > 
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                    <% } %>
+                </div>
+                
+                <div class="col-lg-4">
+                    <% if(((2*i)+i+3) < noticia.length){ %>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"> <%= noticia[(2*i)+i+3].title %>  </h4>
+                                <h6 class="card-subtitle mb-2 text-muted">Por: <%= noticia[(2*i)+i+3].author %> </h6>
+                                <h6 class="card-subtitle mb-2 text-muted"> <%= noticia[(2*i)+i+3].date %> </h6>
+                                <img class="img-fluid" src=<%=noticia[(2*i)+i+3].mediaSource %> >
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                    <% } %>
+                </div>
+                
+                <% } %>
+        </div>      
+    </div>
+
+</body>
+</html>

@@ -2,17 +2,18 @@ const express = require('express');
 const app = express();  // Retorno del objeto de la aplicación
 const mongoose = require('mongoose');
 require('dotenv').config();
+const path = require('path');
 const articleRoutes = require("./routes/news")
 const port = process.env.PORT || 3000;
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'views'));
 
 // middleware
 app.use(express.json());
 
 // Routes
-app.get("/", () => {
-    res.send("¡¡WELCOME!!");
-});
-app.use(articleRoutes);
+app.use("/", articleRoutes);
 
 // Mongo DB Connection
 mongoose.connect(process.env.MONGODB_URI)
