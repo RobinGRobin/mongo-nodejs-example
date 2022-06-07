@@ -5,7 +5,7 @@ controller.getInitialPage = (req, res) => {
     artSchema.find()
                 .then((data) => {
                     res.render('index',{noticia:data});
-                    //console.log({noticia:data});
+                    console.log({noticia:data});
                 })
                 .catch((error) => res.json(error));
 };
